@@ -1,11 +1,8 @@
 before_script:
   - apt-get update
   - apt-get -y install ant
-  - git clone https://git-wip-us.apache.org/repos/asf/ant-ivy.git
-  - cd ant-ivy
-  - ant jar
-  - cp ./build/artifact/jars/ivy.jar /usr/share/ant/lib/
-  - cd ../
+  - apt-get -y install ivy
+  - cp /usr/share/java/ivy.jar /usr/share/ant/lib/
 
 stages:        # List of stages for jobs, and their order of execution
   - .pre
@@ -13,7 +10,6 @@ stages:        # List of stages for jobs, and their order of execution
   - test
   - docs
   - run
-
 
 
 build-job:       # This job runs in the build stage, which runs first.
@@ -29,6 +25,7 @@ test-job:   # This job runs in the test stage.
     - ant test-reports
 
 doc-job:   # This job also runs in the test stage.
+  image: openjdk:11
   stage: docs    # It can run at the same time as unit-test-job (in parallel).
   script:
     - echo "documentation generation..."
