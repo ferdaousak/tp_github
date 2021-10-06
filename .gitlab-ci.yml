@@ -1,5 +1,4 @@
 before_script:
-  - update-alternatives --config javac
   - apt-get update
   - apt-get -y install ant
   - git clone https://git-wip-us.apache.org/repos/asf/ant-ivy.git
@@ -7,6 +6,8 @@ before_script:
   - ant jar
   - cp ./build/artifact/jars/ivy.jar /usr/share/ant/lib/
   - cd ../
+  - update-alternatives --config javac
+  
 
 stages:        # List of stages for jobs, and their order of execution
   - .pre
