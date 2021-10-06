@@ -1,4 +1,5 @@
 before_script:
+  - update-alternatives --config javac
   - apt-get update
   - apt-get -y install ant
   - git clone https://git-wip-us.apache.org/repos/asf/ant-ivy.git
