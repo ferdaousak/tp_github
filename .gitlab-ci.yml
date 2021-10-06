@@ -6,8 +6,6 @@ before_script:
   - ant jar
   - cp ./build/artifact/jars/ivy.jar /usr/share/ant/lib/
   - cd ../
-  - update-alternatives --config javac
-  
 
 stages:        # List of stages for jobs, and their order of execution
   - .pre
