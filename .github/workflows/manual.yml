@@ -4,11 +4,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    run : apt-get update
-    run : apt-get -y install ivy
-    run : cp /usr/share/java/ivy.jar /usr/share/ant/lib/
-
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v2
