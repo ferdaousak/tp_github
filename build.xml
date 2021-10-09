@@ -37,7 +37,7 @@
 			<path refid = "classpath.base" />
 	   </path>
 	<target name="clean">
-		<echo message="Suppression des fichiers issue de la compilation"/>
+		<echo message="Suppression!! des fichiers issue de la compilation"/>
 		<delete dir="${bin.dir}"/>
 		<delete dir= "${lib.dir}" />
 		
